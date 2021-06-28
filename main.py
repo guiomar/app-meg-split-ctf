@@ -23,7 +23,7 @@ with open(__location__+'/config.json') as config_json:
     config = json.load(config_json)
 
 
-fname = config['ctf']
+fname = config['ds']
 t1min = config['t1min'] # in seconds
 t1max = config['t1max']
 t2min = config['t2min']
