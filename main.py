@@ -33,6 +33,6 @@ t2max = config['t2max']
 raw = mne.io.read_raw_ctf(fname)
 
 # save the first seconds of MEG data in FIF file
-raw.save(os.path.join('out_dir1','meg.fif'), tmin=t1min, tmax=t1max)
+raw.save(os.path.join('out_dir1','raw_meg.fif'), tmin=t1min, tmax=t1max)
 # save the rest in a second FIF file
-raw.save(os.path.join('out_dir2','meg.fif'), tmin=t2min, tmax=t2max)
+raw.save(os.path.join('out_dir2','raw_meg.fif'), tmin=t2min, tmax=t2max)
