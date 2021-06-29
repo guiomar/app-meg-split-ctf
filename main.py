@@ -13,6 +13,7 @@
 import os
 import json
 import mne
+import mne_bids
 
 # Current path
 __location__ = os.path.realpath(
@@ -28,6 +29,11 @@ t1min = config['t1min'] # in seconds
 t1max = config['t1max']
 t2min = config['t2min']
 t2max = config['t2max']
+
+
+# Rename ds folder so internal files match
+# mne_bids.copyfiles.copyfile_ctf(fname, 'meg.ds')
+mne_bids.copyfiles.copyfile_ctf(fname, fname)
 
 
 raw = mne.io.read_raw_ctf(fname)
