@@ -10,7 +10,7 @@
 #
 # Author: Guiomar Niso
 
-bl2bids
+#bl2bids
 
 # make output directory
 mkdir -p out_dir1
