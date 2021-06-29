@@ -33,13 +33,18 @@ t2max = config['t2max']
 
 # Rename ds folder so internal files match
 # mne_bids.copyfiles.copyfile_ctf(fname, 'meg.ds')
-fname1 = fname[:-6]+'raw_meg.ds'
+#fname1 = fname[:-6]+'raw_meg.ds'
+fname1 = os.path.join('out_dir1','raw_meg.ds')
 mne_bids.copyfiles.copyfile_ctf(fname, fname1)
 
-
+fname2 = os.path.join('out_dir2','raw2_meg.ds')
+mne_bids.copyfiles.copyfile_ctf(fname, fname2)
+'''
 raw = mne.io.read_raw_ctf(fname)
 
 # save the first seconds of MEG data in FIF file
 raw.save(os.path.join('out_dir1','raw_meg.fif'), tmin=t1min, tmax=t1max)
 # save the rest in a second FIF file
 raw.save(os.path.join('out_dir2','raw_meg.fif'), tmin=t2min, tmax=t2max)
+'''
+
