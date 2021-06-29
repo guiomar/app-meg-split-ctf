@@ -33,7 +33,8 @@ t2max = config['t2max']
 
 # Rename ds folder so internal files match
 # mne_bids.copyfiles.copyfile_ctf(fname, 'meg.ds')
-mne_bids.copyfiles.copyfile_ctf(fname, fname)
+fname1 = fname[:-6]+'raw_meg.ds'
+mne_bids.copyfiles.copyfile_ctf(fname, fname1)
 
 
 raw = mne.io.read_raw_ctf(fname)
