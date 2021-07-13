@@ -14,6 +14,7 @@ import os
 import json
 import mne
 import mne_bids
+import shutil
 
 # Current path
 __location__ = os.path.realpath(
@@ -36,7 +37,7 @@ t2max = config['t2max']
 # mne_bids.copyfiles.copyfile_ctf(fname, 'meg.ds')
 fname1 = fname[:-6]+'raw_meg.ds'
 if os.path.exists(fname1):
-  os.rmdir(fname1)
+  shutil.rmtree(fname1)
 mne_bids.copyfiles.copyfile_ctf(fname, fname1)
 
 
@@ -49,4 +50,4 @@ raw.save(os.path.join('out_dir1','meg.fif'), tmin=t1min, tmax=t1max)
 raw.save(os.path.join('out_dir2','meg.fif'), tmin=t2min, tmax=t2max)
 
 if os.path.exists(fname1):
-  os.rmdir(fname1)
+  shutil.rmtree(fname1)
