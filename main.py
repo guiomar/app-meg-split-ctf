@@ -36,10 +36,9 @@ t2max = config['t2max']
 # FIND A TEMPORAL FOLDER (ask soichi)
 # mne_bids.copyfiles.copyfile_ctf(fname, 'meg.ds')
 fname1 = fname[:-6]+'raw_meg.ds'
-mne_bids.copyfiles.copyfile_ctf(fname, fname1)
 if os.path.exists(fname1):
   shutil.rmtree(fname1)
-
+mne_bids.copyfiles.copyfile_ctf(fname, fname1)
 
 raw = mne.io.read_raw_ctf(fname1)
 
