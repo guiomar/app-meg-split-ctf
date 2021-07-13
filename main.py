@@ -43,9 +43,10 @@ mne_bids.copyfiles.copyfile_ctf(fname, fname1)
 raw = mne.io.read_raw_ctf(fname1)
 
 # save the first seconds of MEG data in FIF file
-raw.save(os.path.join('out_dir1','meg.fif',overwrite=True), tmin=t1min, tmax=t1max)
+raw.save(os.path.join('out_dir1','meg.fif'), tmin=t1min, tmax=t1max, overwrite=True)
 # save the rest in a second FIF file
-raw.save(os.path.join('out_dir2','meg.fif',overwrite=True), tmin=t2min, tmax=t2max)
+raw.save(os.path.join('out_dir2','meg.fif'), tmin=t2min, tmax=t2max, overwrite=True)
+
 
 if os.path.exists(fname1):
   shutil.rmtree(fname1)
